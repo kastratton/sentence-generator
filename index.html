@@ -1,0 +1,81 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#111827">
+  <meta name="description" content="Generate realistic, fictional English sentences for development, testing and creative use.">
+  <title>Sentence Generator</title>
+  <link rel="stylesheet" href="./css/styles.css">
+  <script src="./js/app.js" defer></script>
+</head>
+<body>
+  <main class="app-shell">
+    <header class="page-header">
+      <div class="app-icon" aria-hidden="true">
+        <svg viewBox="0 0 24 24" fill="none"><path d="M4 5.5A2.5 2.5 0 0 1 6.5 3h11A2.5 2.5 0 0 1 20 5.5v9a2.5 2.5 0 0 1-2.5 2.5H11l-4.5 4v-4H6.5A2.5 2.5 0 0 1 4 14.5z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="M8 8h8M8 11.5h5" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+      </div>
+      <div>
+        <h1>Sentence Generator</h1>
+        <p>Generate realistic, natural English sentences for testing, development or creative use.</p>
+      </div>
+    </header>
+
+    <section class="panel controls" aria-labelledby="settings-heading">
+      <h2 id="settings-heading" class="visually-hidden">Generator settings</h2>
+      <div class="control-group length-group">
+        <label for="length">Length <span>(characters)</span></label>
+        <input id="length" type="number" min="10" max="2000" step="1" value="100" inputmode="numeric">
+        <small>Choose 10–2,000 characters</small>
+      </div>
+      <label class="toggle-group" for="special">
+        <span class="toggle-title">Include special characters</span>
+        <span class="switch"><input id="special" type="checkbox" checked><span class="slider"></span></span>
+        <small>Add symbols like ! ? @ # $ % etc.</small>
+      </label>
+      <label class="toggle-group" for="numbers">
+        <span class="toggle-title">Include numbers</span>
+        <span class="switch"><input id="numbers" type="checkbox" checked><span class="slider"></span></span>
+        <small>Add numbers naturally within the text.</small>
+      </label>
+      <button class="button button-primary generate-button" id="generate">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m12 2 1.8 6.2L20 10l-6.2 1.8L12 18l-1.8-6.2L4 10l6.2-1.8zM19 15l1.1 2.9L23 19l-2.9 1.1L19 23l-1.1-2.9L15 19l2.9-1.1z" fill="currentColor"/></svg>
+        Generate
+      </button>
+    </section>
+
+    <section class="panel output-panel" aria-labelledby="output-heading">
+      <div class="output-header">
+        <h2 id="output-heading">Generated sentence</h2>
+        <div class="output-actions">
+          <button class="button button-secondary" id="copy" type="button" title="Copy generated text">
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="8" y="8" width="12" height="13" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M16 8V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v11a2 2 0 0 0 2 2h3" stroke="currentColor" stroke-width="1.7"/></svg>
+            <span>Copy to clipboard</span>
+          </button>
+        </div>
+      </div>
+      <div id="output" class="output-text" tabindex="0" aria-live="polite">The team reviewed the latest figures before sharing a clear update with everyone involved.</div>
+      <div class="output-footer">
+        <span class="char-count"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M4 5h16M4 12h16M4 19h10" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg><span id="count">82 characters</span></span>
+        <span class="status" id="status" role="status"><span class="status-dot"></span><span id="status-text">Ready to use</span></span>
+      </div>
+    </section>
+
+    <section class="features" aria-label="Features">
+      <article class="feature">
+        <span class="feature-icon">▤</span><div><h3>Realistic &amp; natural</h3><p>Uses everyday words and varied sentence structures.</p></div>
+      </article>
+      <article class="feature">
+        <span class="feature-icon">⚙</span><div><h3>Customisable</h3><p>Choose a length and include symbols or numbers.</p></div>
+      </article>
+      <article class="feature">
+        <span class="feature-icon">ϟ</span><div><h3>Fast &amp; simple</h3><p>Generate and copy text in seconds.</p></div>
+      </article>
+      <article class="feature">
+        <span class="feature-icon">♢</span><div><h3>Great for testing</h3><p>Useful for forms, development, UI tests and demos.</p></div>
+      </article>
+    </section>
+    <footer>Generated text is fictional and created locally in your browser.</footer>
+  </main>
+</body>
+</html>
